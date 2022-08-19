@@ -21,10 +21,10 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # take these images and push to dockerhub
-  - docker push -t bbold72/multi-client
-  - docker push -t bbold72/multi-nginx
-  - docker push -t bbold72/multi-server
-  - docker push -t bbold72/multi-worker
+  - docker push bbold72/multi-client
+  - docker push bbold72/multi-nginx
+  - docker push bbold72/multi-server
+  - docker push bbold72/multi-worker
 
 
 
