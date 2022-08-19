@@ -27,4 +27,14 @@ after_success:
   - docker push bbold72/multi-worker
 
 
-
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'multi-docker'
+  env: 'multi-docker-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-633071163946'
+  bucket_path: 'multi-docker'
+  on:
+    branch: main
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
